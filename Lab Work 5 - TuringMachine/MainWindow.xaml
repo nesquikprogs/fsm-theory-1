@@ -1,0 +1,40 @@
+﻿<!-- MainWindow.xaml -->
+<Window x:Class="TuringMachineWPF.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TuringMachineWPF" mc:Ignorable="d" Title="Машина тьюринга. Вычитание 1" Height="600" Width="794">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Число:" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="18"/>
+            <TextBox x:Name="InputTextBox" Width="200" VerticalAlignment="Center" FontSize="18"/>
+            <Button x:Name="RunButton" Content="Анимация" Margin="10,0,0,0" Padding="10,5" Click="RunButton_Click" FontSize="18"/>
+            <Button x:Name="StepButton" Content="Шаг" Margin="10,0,0,0" Padding="10,5" Click="StepButton_Click" FontSize="18"/>
+        </StackPanel>
+        <TextBlock x:Name="NextStatesText" Grid.Row="3" Margin="337,239,28,0" TextWrapping="Wrap" Grid.RowSpan="2" />
+        <TextBlock x:Name="StatusText" Grid.Row="1" Margin="0,0,0,10" FontWeight="Bold" FontSize="18"/>
+        <TextBlock x:Name="TransitionText" Grid.Row="2" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="18"/>
+        <Border Grid.Row="3" BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,0,0,200" >
+            <ScrollViewer>
+                <ItemsControl x:Name="TapeItemsControl">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="1" Width="30" Height="30" Background="{Binding Background}">
+                                <TextBlock Text="{Binding Symbol}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+        <TextBlock x:Name="ResultText" Grid.Row="4" FontWeight="Bold"/>
+    </Grid>
+</Window>

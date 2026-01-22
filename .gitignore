@@ -1,0 +1,58 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+AppPackages/
+Generated\ Files/
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Visual Studio Code
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Windows image file caches
+ehthumbs.db
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Others
+*.log
+*.pdb
+*.cache
+*.ilk
+*.sbr
+*.tlh
+*.tli
+*.tmp
